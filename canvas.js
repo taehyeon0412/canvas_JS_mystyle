@@ -65,6 +65,7 @@ function colorChange(event) {
   const colorValue = event.target.value;
   ctx.strokeStyle = colorValue;
   ctx.fillStyle = colorValue;
+  ctx.lineWidth = lineWidth.value;
 }
 
 function colorClick(event) {
@@ -72,6 +73,7 @@ function colorClick(event) {
   ctx.strokeStyle = colorValue;
   ctx.fillStyle = colorValue;
   color.value = colorValue;
+  ctx.lineWidth = lineWidth.value;
   //사용자가 색을 바꿨다는것을 알 수 있게 color input에도 넣어준다
 }
 //---------------색깔 바꾸기
