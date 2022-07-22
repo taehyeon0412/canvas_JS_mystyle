@@ -11,6 +11,7 @@ const bgFillBtn = document.querySelector(".bg-fill-btn");
 const saveBtn = document.querySelector(".save");
 const newBtn = document.querySelector(".new-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
+const fileInput = document.querySelector(".file");
 
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
@@ -123,6 +124,24 @@ function eraserBtnClick() {
 지우개로 한 후에 이전에 있던 속성으로 다시 돌아가기위해 
 다른 버튼들에 color.value,lineWidth.value를 넣는다*/
 
+function fileChange(event) {
+  const file = event.target.files[0];
+  const url = URL.createObjectURL(file);
+  const image = new Image();
+  image.src = url;
+
+  image.onload = function () {
+    ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    fileInput.value = null; //새로운 사진을 불러올수있게 비워줌
+  };
+}
+//이미지 불러오기
+
+/*  
+
+
+
+*/
 canvas.addEventListener("mousedown", paintingStart);
 canvas.addEventListener("mouseup", paintingEnd);
 canvas.addEventListener("mousemove", mouseMove);
@@ -151,6 +170,9 @@ newBtn.addEventListener("click", newBtnClick);
 
 eraserBtn.addEventListener("click", eraserBtnClick);
 //지우개
+
+fileInput.addEventListener("change", fileChange);
+//이미지 불러오기
 
 /*클릭 좌표 = client는 window기준 
              offset은 canvas기준  
