@@ -8,6 +8,9 @@ const colorOption = Array.from(
 const paintingBtn = document.querySelector(".painting-btn");
 const paintingFillBtn = document.querySelector(".painting-fill-btn");
 const bgFillBtn = document.querySelector(".bg-fill-btn");
+const saveBtn = document.querySelector(".save");
+const newBtn = document.querySelector(".new-btn");
+const eraserBtn = document.querySelector(".eraser-btn");
 
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
@@ -16,6 +19,10 @@ canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 ctx.lineCap = "round"; // butt round square 종류 3가지
 ctx.lineWidth = lineWidth.value; //초기값을 설정하기위해 준다
+//
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+//초기값배경색으로 하얀색을 주기위해서
 
 let painting = false;
 let filling = false;
@@ -67,18 +74,54 @@ function colorClick(event) {
 
 function paintingBtnClick() {
   filling = false;
+  ctx.strokeStyle = color.value;
+  ctx.lineWidth = lineWidth.value;
 }
 function paintingFillBtnClick() {
   filling = true;
+  ctx.strokeStyle = color.value;
+  ctx.fillStyle = color.value;
+  ctx.lineWidth = lineWidth.value;
 }
 /*paintingEnd함수에 filling 조건문을 추가해서
-  버튼을 누르면 모드 바뀌게 하였다  */
+  버튼을 누르면 모드 바뀌게 하였다  
+  지우개로 한 후에 이전에 있던 속성으로 다시 돌아가기위해 
+  color.value,lineWidth.value를 넣음*/
 
 function bgFillBtnClick() {
   ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 //그리기 그리면채워짐 화면채우기 버튼
+
+function saveClick() {
+  const url = canvas.toDataURL();
+  const a = document.createElement("a"); //가상의 a를 만들어준다
+  if (confirm("저장하시겠습니까?") == true) {
+    a.href = url;
+    a.download = "내그림.jpg";
+    a.click();
+  } else {
+    return;
+  }
+}
+//저장하기
+
+function newBtnClick() {
+  saveClick();
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+}
+//새로만들기
+
+function eraserBtnClick() {
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 50;
+  filling = false;
+}
+/* 지우개 
+지우개로 한 후에 이전에 있던 속성으로 다시 돌아가기위해 
+다른 버튼들에 color.value,lineWidth.value를 넣는다*/
 
 canvas.addEventListener("mousedown", paintingStart);
 canvas.addEventListener("mouseup", paintingEnd);
@@ -99,6 +142,15 @@ paintingBtn.addEventListener("click", paintingBtnClick);
 paintingFillBtn.addEventListener("click", paintingFillBtnClick);
 bgFillBtn.addEventListener("click", bgFillBtnClick);
 //그리기 그리면채워짐 화면채우기 버튼클릭
+
+saveBtn.addEventListener("click", saveClick);
+//저장하기
+
+newBtn.addEventListener("click", newBtnClick);
+//새로만들기
+
+eraserBtn.addEventListener("click", eraserBtnClick);
+//지우개
 
 /*클릭 좌표 = client는 window기준 
              offset은 canvas기준  
