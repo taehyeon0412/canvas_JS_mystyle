@@ -5,10 +5,11 @@
 body {
   margin: 0;
   height: 100vh;
+  background: #444;
 }
 
 canvas {
   height: 100%;
   width: 97%;
-  border: 5px solid black;
+  border: 2px solid black;
 }

@@ -15,3 +15,55 @@
 .color-option:hover {
   outline: 2px solid cornflowerblue;
 }
+
+/* 색깔 옵션들 */
+
+.bottom-right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 3vw;
+  gap: 1vw;
+}
+
+/* 컬러인풋,저장버튼 */
+
+.color-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+}
+
+#color {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 53px;
+  height: 53px;
+  border: none;
+}
+
+#color::-webkit-color-swatch {
+  border-radius: 30px;
+  border: 4px solid rgb(104, 101, 101);
+}
+
+#color::-moz-color-swatch {
+  border-radius: 30px;
+  border: 4px solid rgb(104, 101, 101);
+}
+
+/* 컬러인풋 */
+
+.save {
+  width: 45px;
+  height: 45px;
+  box-shadow: 3px 3px 3px black;
+  animation-duration: 0.3s;
+}
+
+.save:active {
+  box-shadow: none;
+  background-color: #ccc;
+}
