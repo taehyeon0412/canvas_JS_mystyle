@@ -1,0 +1,27 @@
+.content {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr 0.2fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+    ". . . ."
+    "sc md md md"
+    "sc md md md"
+    "sc bc bc bc";
+}
+
+.mid-content {
+  grid-area: md;
+}
+
+.side-content {
+  grid-area: sc;
+}
+
+.bottom-content {
+  grid-area: bc;
+}

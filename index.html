@@ -6,37 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>canvas_JS_myStyle</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <canvas></canvas>
-    <input class="line-width" type="range" min="1" max="10" value="5" step="0.01" />
+    <div class="content">
 
-    <div>
-        <div class="color-option" style="background-color:#ffffff" data-color="#ffffff"></div>
-        <div class="color-option" style="background-color:#000000" data-color="#000000"></div>
-        <div class="color-option" style="background-color:#e74c3c" data-color="#e74c3c"></div>
-        <div class="color-option" style="background-color:#e67e22" data-color="#e67e22"></div>
-        <div class="color-option" style="background-color:#f1c40f" data-color="#f1c40f"></div>
-        <div class="color-option" style="background-color:#27ae60" data-color="#27ae60"></div>
-        <div class="color-option" style="background-color:#3498db" data-color="#3498db"></div>
-        <div class="color-option" style="background-color:#2c3e50" data-color="#2c3e50"></div>
-        <div class="color-option" style="background-color:#9b59b6" data-color="#9b59b6"></div>
-        <input id="color" type="color" />
+        <div class="mid-content">
+            <canvas></canvas>
+        </div>
+
+        <div class="side-content">
+            <div class="file-div">
+                <label for="file">
+                    <i class="fa-regular fa-image fa-2xl"></i>
+                    <!-- input에 연결된 label for는 id만 연결됨 -->
+                    <input id="file" type="file" accept="img/*" />
+                </label>
+            </div>
+            <button class="new-btn">
+                <i class="fa-solid fa-note-sticky fa-2xl"></i>
+            </button>
+            <button class="painting-btn">
+                <i class="fa-solid fa-pencil fa-xl"></i>
+            </button>
+            <button class="painting-fill-btn">
+                <i class="fa-solid fa-square-pen fa-2xl"></i>
+            </button>
+            <button class="bg-fill-btn">
+                <i class="fa-solid fa-fill-drip fa-2xl"></i>
+            </button>
+
+            <button class="eraser-btn">
+                <i class="fa-solid fa-eraser fa-2xl"></i>
+            </button>
+            <input class="line-width" type="range" min="1" max="10" value="5" step="0.01" />
+        </div>
+
+        <div class="bottom-content">
+            <div class="color-option" style="background-color:#ffffff" data-color="#ffffff"></div>
+            <div class="color-option" style="background-color:#000000" data-color="#000000"></div>
+            <div class="color-option" style="background-color:#e74c3c" data-color="#e74c3c"></div>
+            <div class="color-option" style="background-color:#e67e22" data-color="#e67e22"></div>
+            <div class="color-option" style="background-color:#f1c40f" data-color="#f1c40f"></div>
+            <div class="color-option" style="background-color:#27ae60" data-color="#27ae60"></div>
+            <div class="color-option" style="background-color:#3498db" data-color="#3498db"></div>
+            <div class="color-option" style="background-color:#2c3e50" data-color="#2c3e50"></div>
+            <div class="color-option" style="background-color:#9b59b6" data-color="#9b59b6"></div>
+            <input id="color" type="color" />
+            <button class="save">저장</button>
+        </div>
+
+
     </div>
 
-    <button class="painting-btn">그리기</button>
-    <button class="painting-fill-btn">그리면채워짐</button>
-    <button class="bg-fill-btn">화면채우기</button>
-    <button class="new-btn">새로만들기</button>
-    <button class="eraser-btn">지우개</button>
-    <button class="save">저장</button>
-    <input class="file" type="file" accept="img/*" />
 
 
-
-
+    <script src="https://kit.fontawesome.com/68b2fe6ae2.js" crossorigin="anonymous"></script>
     <script src="canvas.js"></script>
 </body>
 

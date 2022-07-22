@@ -1,0 +1,14 @@
+@import url("layout.css");
+@import url("bot-css.css");
+@import url("side-css.css");
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+canvas {
+  height: 100%;
+  width: 97%;
+  border: 5px solid black;
+}

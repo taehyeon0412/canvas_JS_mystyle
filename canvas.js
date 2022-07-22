@@ -11,10 +11,13 @@ const bgFillBtn = document.querySelector(".bg-fill-btn");
 const saveBtn = document.querySelector(".save");
 const newBtn = document.querySelector(".new-btn");
 const eraserBtn = document.querySelector(".eraser-btn");
-const fileInput = document.querySelector(".file");
+const fileInput = document.querySelector("#file");
 
-const CANVAS_WIDTH = 400;
-const CANVAS_HEIGHT = 400;
+const midContent = document.querySelector(".mid-content");
+
+const CANVAS_WIDTH = midContent.offsetWidth;
+const CANVAS_HEIGHT = midContent.offsetHeight;
+//canvas의 넓이 높이가 midContent만큼 꽉차게
 
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
@@ -137,6 +140,10 @@ function fileChange(event) {
 }
 //이미지 불러오기
 
+function windowResize() {
+  window.location.reload();
+}
+
 /*  
 
 
@@ -173,6 +180,8 @@ eraserBtn.addEventListener("click", eraserBtnClick);
 
 fileInput.addEventListener("change", fileChange);
 //이미지 불러오기
+
+window.addEventListener("resize", windowResize);
 
 /*클릭 좌표 = client는 window기준 
              offset은 canvas기준  

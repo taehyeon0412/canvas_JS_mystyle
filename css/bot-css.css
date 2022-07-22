@@ -1,0 +1,17 @@
+.bottom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+.color-option:hover {
+  outline: 2px solid cornflowerblue;
+}

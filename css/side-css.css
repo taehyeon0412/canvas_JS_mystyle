@@ -1,0 +1,58 @@
+.side-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+}
+
+.file-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border: 1px solid black;
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.file-div:hover {
+  outline: 2px solid cornflowerblue;
+}
+.file-div:active {
+  box-shadow: none;
+  background-color: #ccc;
+}
+
+.side-content button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border: 1px solid black;
+  border-radius: 30px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.side-content button:hover {
+  outline: 2px solid cornflowerblue;
+}
+
+.side-content button:active {
+  box-shadow: none;
+  background-color: #ccc;
+}
+
+.line-width {
+  width: 8vw;
+  height: 5vh;
+}
+/* 굵기 */
+
+input#file {
+  display: none;
+}
+/* 이미지 불러오기 */
